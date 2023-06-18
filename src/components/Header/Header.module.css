@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Chonburi&display=swap");
+
+.headerPic {
+  width: 100%;
+  height: 220px;
+  background-image: url("/public/bar-card.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(70%);
+}
+
+.fontH1 {
+  font-family: "Chonburi", cursive;
+  color: #dda568;
+}
