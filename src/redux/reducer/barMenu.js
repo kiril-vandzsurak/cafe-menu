@@ -1,8 +1,10 @@
+import { CHANGE_PRICE } from "../actions";
+
 const initialState = {
   coctailMenu: [
     {
       id: 1,
-      name: "Casablanka",
+      name: "Касабланка",
       ingridients: [
         "De Kupyer Advoocat",
         "Горілка",
@@ -33,6 +35,15 @@ const initialState = {
 
 const barMenu = (state = initialState, action) => {
   switch (action.type) {
+    case CHANGE_PRICE:
+      return {
+        ...state,
+        coctailMenu: state.coctailMenu.map((product) =>
+          product.id === action.payload.id
+            ? { ...product, price: action.payload.newPrice }
+            : product
+        ),
+      };
     default:
       return state;
   }
