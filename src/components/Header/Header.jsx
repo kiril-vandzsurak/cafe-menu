@@ -9,11 +9,14 @@ const Header = () => {
       <div className={styles.headerPic}>
         <Container>
           <Row>
-            <Col>
-              <h1 className={styles.fontH1}>Salamandra</h1>
-              <h2>Cocktail bar</h2>
+            <Col className={styles.colPosition}>
+              <h1 style={{ textAlign: "center" }} className={styles.fontH1}>
+                Salamandra
+              </h1>
+              <h2 style={{ textAlign: "center", color: "white" }}>
+                Cocktail bar
+              </h2>
             </Col>
-            <Col>1 ofsssssssssssssssssssssssssss 1</Col>
           </Row>
         </Container>
       </div>

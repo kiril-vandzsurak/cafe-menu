@@ -30,6 +30,12 @@ const initialState = {
       ingridients: ["De Kupyer Apricot Brandy", "Джин", "Апельсиновий сік"],
       price: 0,
     },
+    {
+      id: 4,
+      name: "Рай",
+      ingridients: ["De Kupyer Apricot Brandy", "Джин", "Апельсиновий сік"],
+      price: 0,
+    },
   ],
 };
 

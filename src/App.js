@@ -5,12 +5,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<MainBody />} path="/" />
-        <Route element={<Admin />} path="/admin" />
-      </Routes>
-    </BrowserRouter>
+    <div style={{ height: "100vh" }}>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<MainBody />} path="/" />
+          <Route element={<Admin />} path="/admin" />
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 

@@ -14,21 +14,24 @@ const CoctailCard = () => {
   return (
     <div>
       <div className={styles.naming}>
-        <span>Coctail Card</span>
+        <div style={{ textAlign: "center" }}>Coctail Card</div>
         <Container>
-          <Row className="justify-content-center mt-5">
-            <Col>
-              {menu.map((product) => (
-                <Card key={product.id}>
-                  <Card.Img variant="top" src="holder.js/100px180" />
+          <Row className="mt-5">
+            {menu.map((product) => (
+              <Col key={product.id} sm={4} className="mb-4">
+                <Card style={{ width: "250px" }}>
+                  <Card.Img
+                    variant="top"
+                    src={window.location.origin + "/brick.jpg"}
+                  />
                   <Card.Body>
                     <Card.Title>{product.name}</Card.Title>
                     <Card.Text>{product.ingridients}</Card.Text>
-                    <Card.Title> Price: {product.price} грн</Card.Title>
+                    <Card.Title>Price: {product.price} грн</Card.Title>
                   </Card.Body>
                 </Card>
-              ))}
-            </Col>
+              </Col>
+            ))}
           </Row>
         </Container>
       </div>

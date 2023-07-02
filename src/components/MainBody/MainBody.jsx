@@ -4,7 +4,7 @@ import Header from "../Header/Header";
 
 const MainBody = () => {
   return (
-    <div>
+    <div className={styles.widthMain}>
       <div className={styles.background}>
         <Header />
         <CoctailCard />
