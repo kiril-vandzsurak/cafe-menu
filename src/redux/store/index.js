@@ -8,6 +8,8 @@ import { persistReducer, persistStore } from "redux-persist";
 import { encryptTransform } from "redux-persist-transform-encrypt";
 import barMenu from "../reducer/barMenu.js";
 import alcoBar from "../reducer/alcoBar.js";
+import hotWineAndHookah from "../reducer/hotWineAndHookah.js";
+import coffee from "../reducer/coffee.js";
 
 const persistConfig = {
   key: "root",
@@ -22,6 +24,8 @@ const persistConfig = {
 const bigReducer = combineReducers({
   bar: barMenu,
   alco: alcoBar,
+  hotWine: hotWineAndHookah,
+  coffee: coffee,
 });
 
 const persistedReducer = persistReducer(persistConfig, bigReducer);

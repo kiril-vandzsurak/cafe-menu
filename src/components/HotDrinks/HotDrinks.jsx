@@ -1,21 +1,21 @@
 import React from "react";
-import styles from "./AlcoCard.module.css";
+import styles from "./HotDrinks.module.css";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import { useSelector } from "react-redux";
 
-const AlcoCard = () => {
-  const alco = useSelector((state) => state.alco);
+const HotDrinks = () => {
+  const hotDrink = useSelector((state) => state.hotWine);
 
   return (
     <div>
       <div className={styles.naming}>
-        <div style={{ textAlign: "center" }}>Alco Card</div>
+        <div style={{ textAlign: "center" }}>Hot Drinks</div>
         <Container>
           <Row className="mt-5">
-            {Object.values(alco)
+            {Object.values(hotDrink)
               .flat()
               .map((product) => (
                 <Col key={product.id} sm={4} className="mb-4">
@@ -38,4 +38,4 @@ const AlcoCard = () => {
   );
 };
 
-export default AlcoCard;
+export default HotDrinks;

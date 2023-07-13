@@ -7,6 +7,9 @@ import { changePrice } from "../../redux/actions";
 const Admin = () => {
   const menu = useSelector((state) => state.bar.coctailMenu);
   const alco = useSelector((state) => state.alco);
+  const hotDrink = useSelector((state) => state.hotWine);
+  const coffee = useSelector((state) => state.coffee.coffeeDrink);
+
   const [showModal, setShowModal] = useState(false);
   const [selectedProductId, setSelectedProductId] = useState(null);
   const [newPrice, setNewPrice] = useState("");
@@ -19,12 +22,28 @@ const Admin = () => {
     setShowModal(true);
   };
 
+  const handleOpenCoffeModal = (coffeeId) => {
+    setSelectedProductId(coffeeId);
+    const coffeeProduct = coffee.find((item) => item.id === coffeeId);
+    setNewPrice(coffeeProduct.price);
+    setShowModal(true);
+  };
+
   const handleOpenAlcoModal = (alcoId) => {
     setSelectedProductId(alcoId);
     const alcoProduct = Object.values(alco)
       .flat()
       .find((item) => item.id === alcoId);
     setNewPrice(alcoProduct.price);
+    setShowModal(true);
+  };
+
+  const handleOpenHotDrinkModal = (hotDrinkId) => {
+    setSelectedProductId(hotDrinkId);
+    const hotDrinkProduct = Object.values(hotDrink)
+      .flat()
+      .find((item) => item.id === hotDrinkId);
+    setNewPrice(hotDrinkProduct.price);
     setShowModal(true);
   };
 
@@ -36,11 +55,6 @@ const Admin = () => {
     dispatch(changePrice(selectedProductId, newPrice));
     handleCloseModal();
   };
-
-  // const handleAlcoPriceChange = () => {
-  //   dispatch(changePrice(selectedAlcoId, newAlcoPrice));
-  //   handleCloseModal();
-  // };
 
   return (
     <div>
@@ -63,6 +77,36 @@ const Admin = () => {
                 <Button
                   variant="success"
                   onClick={() => handleOpenModal(product.id)}
+                >
+                  Змінити ціну
+                </Button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      <table style={{ width: "500px" }}>
+        <thead>
+          <tr>
+            <th style={{ textAlign: "center" }}>ID</th>
+            <th style={{ textAlign: "center" }}>Name</th>
+            <th style={{ textAlign: "center" }}>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {coffee.map((coffeeProduct) => (
+            <tr
+              key={coffeeProduct.id}
+              style={{ borderBottom: "1px solid black" }}
+            >
+              <td style={{ textAlign: "center" }}>{coffeeProduct.id}</td>
+              <td style={{ textAlign: "center" }}>{coffeeProduct.name}</td>
+              <td style={{ textAlign: "center" }}>{coffeeProduct.price}</td>
+              <td>
+                <Button
+                  variant="success"
+                  onClick={() => handleOpenCoffeModal(coffeeProduct.id)}
                 >
                   Змінити ціну
                 </Button>
@@ -95,6 +139,35 @@ const Admin = () => {
                   <Button
                     variant="success"
                     onClick={() => handleOpenAlcoModal(alcoProduct.id)}
+                  >
+                    Change Price
+                  </Button>
+                </td>
+              </tr>
+            ))}
+        </tbody>
+      </table>
+
+      <table style={{ width: "500px", marginTop: "20px" }}>
+        <thead>
+          <tr>
+            <th style={{ textAlign: "center" }}>ID</th>
+            <th style={{ textAlign: "center" }}>Name</th>
+            <th style={{ textAlign: "center" }}>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.values(hotDrink)
+            .flat()
+            .map((product) => (
+              <tr key={product.id} style={{ borderBottom: "1px solid black" }}>
+                <td style={{ textAlign: "center" }}>{product.id}</td>
+                <td style={{ textAlign: "center" }}>{product.name}</td>
+                <td style={{ textAlign: "center" }}>{product.price}</td>
+                <td>
+                  <Button
+                    variant="success"
+                    onClick={() => handleOpenHotDrinkModal(product.id)}
                   >
                     Change Price
                   </Button>
