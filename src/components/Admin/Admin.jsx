@@ -6,6 +6,7 @@ import { changePrice } from "../../redux/actions";
 
 const Admin = () => {
   const menu = useSelector((state) => state.bar.coctailMenu);
+  const alco = useSelector((state) => state.alco);
   const [showModal, setShowModal] = useState(false);
   const [selectedProductId, setSelectedProductId] = useState(null);
   const [newPrice, setNewPrice] = useState("");
@@ -18,6 +19,15 @@ const Admin = () => {
     setShowModal(true);
   };
 
+  const handleOpenAlcoModal = (alcoId) => {
+    setSelectedProductId(alcoId);
+    const alcoProduct = Object.values(alco)
+      .flat()
+      .find((item) => item.id === alcoId);
+    setNewPrice(alcoProduct.price);
+    setShowModal(true);
+  };
+
   const handleCloseModal = () => {
     setShowModal(false);
   };
@@ -26,6 +36,11 @@ const Admin = () => {
     dispatch(changePrice(selectedProductId, newPrice));
     handleCloseModal();
   };
+
+  // const handleAlcoPriceChange = () => {
+  //   dispatch(changePrice(selectedAlcoId, newAlcoPrice));
+  //   handleCloseModal();
+  // };
 
   return (
     <div>
@@ -56,6 +71,39 @@ const Admin = () => {
           ))}
         </tbody>
       </table>
+
+      <table style={{ width: "500px", marginTop: "20px" }}>
+        <thead>
+          <tr>
+            <th style={{ textAlign: "center" }}>ID</th>
+            <th style={{ textAlign: "center" }}>Name</th>
+            <th style={{ textAlign: "center" }}>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.values(alco)
+            .flat()
+            .map((alcoProduct) => (
+              <tr
+                key={alcoProduct.id}
+                style={{ borderBottom: "1px solid black" }}
+              >
+                <td style={{ textAlign: "center" }}>{alcoProduct.id}</td>
+                <td style={{ textAlign: "center" }}>{alcoProduct.name}</td>
+                <td style={{ textAlign: "center" }}>{alcoProduct.price}</td>
+                <td>
+                  <Button
+                    variant="success"
+                    onClick={() => handleOpenAlcoModal(alcoProduct.id)}
+                  >
+                    Change Price
+                  </Button>
+                </td>
+              </tr>
+            ))}
+        </tbody>
+      </table>
+
       <Modal show={showModal} onHide={handleCloseModal}>
         <Modal.Header closeButton>
           <Modal.Title>Change Price</Modal.Title>

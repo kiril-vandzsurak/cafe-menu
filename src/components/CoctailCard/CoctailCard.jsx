@@ -9,6 +9,7 @@ import { useSelector } from "react-redux";
 
 const CoctailCard = () => {
   const menu = useSelector((state) => state.bar.coctailMenu);
+
   const [expandedIngredients, setExpandedIngredients] = useState([]);
 
   const toggleIngredients = (productId) => {
