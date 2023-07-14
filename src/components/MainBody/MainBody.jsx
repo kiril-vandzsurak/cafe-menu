@@ -6,17 +6,21 @@ import HotDrinks from "../HotDrinks/HotDrinks";
 import CoffeeDrink from "../CoffeeDrink/CoffeeDrink";
 import ShakeDrinks from "../ShakeDrinks/ShakeDrinks";
 import TeaDrinks from "../TeaDrinks/TeaDrinks";
+import LemonadeDrinks from "../LemonadeDrinks/LemonadeDrinks";
+import LuxCoctails from "../LuxCoctails/LuxCoctails";
 
 const MainBody = () => {
   return (
     <div className={styles.widthMain}>
       <Header />
-      {/* <CoctailCard />
+      <CoctailCard className={styles.test} />
       <AlcoCard />
       <HotDrinks />
       <CoffeeDrink />
-      <ShakeDrinks /> */}
+      <ShakeDrinks />
       <TeaDrinks />
+      <LemonadeDrinks />
+      <LuxCoctails />
     </div>
   );
 };

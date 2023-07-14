@@ -11,6 +11,8 @@ const Admin = () => {
   const coffee = useSelector((state) => state.coffee.coffeeDrink);
   const shake = useSelector((state) => state.shakes);
   const tea = useSelector((state) => state.tea);
+  const lemonade = useSelector((state) => state.lemonade);
+  const luxCoctail = useSelector((state) => state.luxCoctail.coctails);
 
   const [showModal, setShowModal] = useState(false);
   const [selectedProductId, setSelectedProductId] = useState(null);
@@ -21,6 +23,15 @@ const Admin = () => {
     setSelectedProductId(productId);
     const product = menu.find((item) => item.id === productId);
     setNewPrice(product.price);
+    setShowModal(true);
+  };
+
+  const handleOpenLuxCoctailModal = (luxCoctailId) => {
+    setSelectedProductId(luxCoctailId);
+    const luxCoctailProduct = luxCoctail.find(
+      (item) => item.id === luxCoctailId
+    );
+    setNewPrice(luxCoctailProduct.price);
     setShowModal(true);
   };
 
@@ -46,6 +57,15 @@ const Admin = () => {
       .flat()
       .find((item) => item.id === teaId);
     setNewPrice(teaProduct.price);
+    setShowModal(true);
+  };
+
+  const handleOpenLemonadeModal = (lemonadeId) => {
+    setSelectedProductId(lemonadeId);
+    const lemonadeProduct = Object.values(tea)
+      .flat()
+      .find((item) => item.id === lemonadeId);
+    setNewPrice(lemonadeProduct.price);
     setShowModal(true);
   };
 
@@ -97,6 +117,33 @@ const Admin = () => {
                 <Button
                   variant="success"
                   onClick={() => handleOpenModal(product.id)}
+                >
+                  Змінити ціну
+                </Button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      <table style={{ width: "500px" }}>
+        <thead>
+          <tr>
+            <th style={{ textAlign: "center" }}>ID</th>
+            <th style={{ textAlign: "center" }}>Name</th>
+            <th style={{ textAlign: "center" }}>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {luxCoctail.map((product) => (
+            <tr key={product.id} style={{ borderBottom: "1px solid black" }}>
+              <td style={{ textAlign: "center" }}>{product.id}</td>
+              <td style={{ textAlign: "center" }}>{product.name}</td>
+              <td style={{ textAlign: "center" }}>{product.price}</td>
+              <td>
+                <Button
+                  variant="success"
+                  onClick={() => handleOpenLuxCoctailModal(product.id)}
                 >
                   Змінити ціну
                 </Button>
@@ -191,6 +238,38 @@ const Admin = () => {
                   <Button
                     variant="success"
                     onClick={() => handleOpenTeaModal(teaProduct.id)}
+                  >
+                    Change Price
+                  </Button>
+                </td>
+              </tr>
+            ))}
+        </tbody>
+      </table>
+
+      <table style={{ width: "500px", marginTop: "20px" }}>
+        <thead>
+          <tr>
+            <th style={{ textAlign: "center" }}>ID</th>
+            <th style={{ textAlign: "center" }}>Name</th>
+            <th style={{ textAlign: "center" }}>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.values(lemonade)
+            .flat()
+            .map((lemonadeProduct) => (
+              <tr
+                key={lemonadeProduct.id}
+                style={{ borderBottom: "1px solid black" }}
+              >
+                <td style={{ textAlign: "center" }}>{lemonadeProduct.id}</td>
+                <td style={{ textAlign: "center" }}>{lemonadeProduct.name}</td>
+                <td style={{ textAlign: "center" }}>{lemonadeProduct.price}</td>
+                <td>
+                  <Button
+                    variant="success"
+                    onClick={() => handleOpenLemonadeModal(lemonadeProduct.id)}
                   >
                     Change Price
                   </Button>
