@@ -5,9 +5,3 @@
   transform: translateX(-50%);
   background-color: #3e1011;
 }
-
-.test {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}

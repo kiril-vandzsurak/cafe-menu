@@ -13,7 +13,7 @@ const MainBody = () => {
   return (
     <div className={styles.widthMain}>
       <Header />
-      <CoctailCard className={styles.test} />
+      <CoctailCard />
       <AlcoCard />
       <HotDrinks />
       <CoffeeDrink />
