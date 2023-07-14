@@ -10,6 +10,8 @@ import barMenu from "../reducer/barMenu.js";
 import alcoBar from "../reducer/alcoBar.js";
 import hotWineAndHookah from "../reducer/hotWineAndHookah.js";
 import coffee from "../reducer/coffee.js";
+import shakeDrinks from "../reducer/shakeDrinks.js";
+import teaDrink from "../reducer/teaDrink.js";
 
 const persistConfig = {
   key: "root",
@@ -26,6 +28,8 @@ const bigReducer = combineReducers({
   alco: alcoBar,
   hotWine: hotWineAndHookah,
   coffee: coffee,
+  shakes: shakeDrinks,
+  tea: teaDrink,
 });
 
 const persistedReducer = persistReducer(persistConfig, bigReducer);

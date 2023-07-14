@@ -9,6 +9,8 @@ const Admin = () => {
   const alco = useSelector((state) => state.alco);
   const hotDrink = useSelector((state) => state.hotWine);
   const coffee = useSelector((state) => state.coffee.coffeeDrink);
+  const shake = useSelector((state) => state.shakes);
+  const tea = useSelector((state) => state.tea);
 
   const [showModal, setShowModal] = useState(false);
   const [selectedProductId, setSelectedProductId] = useState(null);
@@ -35,6 +37,24 @@ const Admin = () => {
       .flat()
       .find((item) => item.id === alcoId);
     setNewPrice(alcoProduct.price);
+    setShowModal(true);
+  };
+
+  const handleOpenTeaModal = (teaId) => {
+    setSelectedProductId(teaId);
+    const teaProduct = Object.values(tea)
+      .flat()
+      .find((item) => item.id === teaId);
+    setNewPrice(teaProduct.price);
+    setShowModal(true);
+  };
+
+  const handleOpenShakeModal = (shakeID) => {
+    setSelectedProductId(shakeID);
+    const shakeProduct = Object.values(shake)
+      .flat()
+      .find((item) => item.id === shakeID);
+    setNewPrice(shakeProduct.price);
     setShowModal(true);
   };
 
@@ -139,6 +159,70 @@ const Admin = () => {
                   <Button
                     variant="success"
                     onClick={() => handleOpenAlcoModal(alcoProduct.id)}
+                  >
+                    Change Price
+                  </Button>
+                </td>
+              </tr>
+            ))}
+        </tbody>
+      </table>
+
+      <table style={{ width: "500px", marginTop: "20px" }}>
+        <thead>
+          <tr>
+            <th style={{ textAlign: "center" }}>ID</th>
+            <th style={{ textAlign: "center" }}>Name</th>
+            <th style={{ textAlign: "center" }}>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.values(tea)
+            .flat()
+            .map((teaProduct) => (
+              <tr
+                key={teaProduct.id}
+                style={{ borderBottom: "1px solid black" }}
+              >
+                <td style={{ textAlign: "center" }}>{teaProduct.id}</td>
+                <td style={{ textAlign: "center" }}>{teaProduct.name}</td>
+                <td style={{ textAlign: "center" }}>{teaProduct.price}</td>
+                <td>
+                  <Button
+                    variant="success"
+                    onClick={() => handleOpenTeaModal(teaProduct.id)}
+                  >
+                    Change Price
+                  </Button>
+                </td>
+              </tr>
+            ))}
+        </tbody>
+      </table>
+
+      <table style={{ width: "500px", marginTop: "20px" }}>
+        <thead>
+          <tr>
+            <th style={{ textAlign: "center" }}>ID</th>
+            <th style={{ textAlign: "center" }}>Name</th>
+            <th style={{ textAlign: "center" }}>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.values(shake)
+            .flat()
+            .map((shakeProduct) => (
+              <tr
+                key={shakeProduct.id}
+                style={{ borderBottom: "1px solid black" }}
+              >
+                <td style={{ textAlign: "center" }}>{shakeProduct.id}</td>
+                <td style={{ textAlign: "center" }}>{shakeProduct.name}</td>
+                <td style={{ textAlign: "center" }}>{shakeProduct.price}</td>
+                <td>
+                  <Button
+                    variant="success"
+                    onClick={() => handleOpenShakeModal(shakeProduct.id)}
                   >
                     Change Price
                   </Button>

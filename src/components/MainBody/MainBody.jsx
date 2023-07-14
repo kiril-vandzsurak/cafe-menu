@@ -4,15 +4,19 @@ import Header from "../Header/Header";
 import AlcoCard from "../AlcoCard/AlcoCard";
 import HotDrinks from "../HotDrinks/HotDrinks";
 import CoffeeDrink from "../CoffeeDrink/CoffeeDrink";
+import ShakeDrinks from "../ShakeDrinks/ShakeDrinks";
+import TeaDrinks from "../TeaDrinks/TeaDrinks";
 
 const MainBody = () => {
   return (
     <div className={styles.widthMain}>
       <Header />
-      <CoctailCard />
+      {/* <CoctailCard />
       <AlcoCard />
       <HotDrinks />
       <CoffeeDrink />
+      <ShakeDrinks /> */}
+      <TeaDrinks />
     </div>
   );
 };
