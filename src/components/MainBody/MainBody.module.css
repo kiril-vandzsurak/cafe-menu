@@ -5,3 +5,27 @@
   transform: translateX(-50%);
   background-color: #3e1011;
 }
+
+@media (min-width: 1199px) and (max-width: 1461px) {
+  .widthMain {
+    width: 65%;
+  }
+}
+
+@media (min-width: 757px) and (max-width: 979px) {
+  .widthMain {
+    width: 65%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 756px) {
+  .widthMain {
+    width: 90%;
+  }
+}
+
+@media (min-width: 151px) and (max-width: 575px) {
+  .widthMain {
+    width: 95%;
+  }
+}

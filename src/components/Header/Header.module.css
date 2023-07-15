@@ -21,3 +21,33 @@
   top: 50%;
   transform: translateY(-50%);
 }
+
+@media (min-width: 980px) and (max-width: 1199px) {
+  .fontH1 {
+    font-size: 60px;
+  }
+}
+
+@media (min-width: 757px) and (max-width: 979px) {
+  .fontH1 {
+    font-size: 60px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 756px) {
+  .fontH1 {
+    font-size: 60px;
+  }
+  .colPosition {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+@media (min-width: 280px) and (max-width: 575px) {
+  .fontH1 {
+    font-size: 35px;
+  }
+}
