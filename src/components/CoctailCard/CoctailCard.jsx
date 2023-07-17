@@ -29,7 +29,11 @@ const CoctailCard = () => {
   return (
     <div>
       <div className={styles.naming}>
-        <div style={{ textAlign: "center" }}>Coctail Card</div>
+        <div>
+          <div className={styles.underline}></div>
+          <div className={styles.textNaming}>Coctail Card</div>
+          <div className={styles.underline}></div>
+        </div>
         <Container>
           <Row className="mt-5">
             {menu.map((product) => (

@@ -12,12 +12,23 @@ const CoffeeDrink = () => {
   return (
     <div>
       <div className={styles.naming}>
-        <div style={{ textAlign: "center" }}>Hot Drinks</div>
+        <div>
+          <div className={styles.textNaming}>Coctail Card</div>
+          <div className={styles.underline}></div>
+        </div>
         <Container>
           <Row className="mt-5">
             {coffee.map((product) => (
-              <Col key={product.id} sm={4} className="mb-4">
-                <Card style={{ width: "250px" }}>
+              <Col
+                key={product.id}
+                xs={12}
+                sm={6}
+                md={6}
+                lg={6}
+                xl={4}
+                className="mb-4"
+              >
+                <Card>
                   <Card.Img
                     variant="top"
                     src={window.location.origin + "/brick.jpg"}
