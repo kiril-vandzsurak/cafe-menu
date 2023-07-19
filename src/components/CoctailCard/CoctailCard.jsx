@@ -49,7 +49,7 @@ const CoctailCard = () => {
                 <Card className={styles.card}>
                   <Card.Img
                     variant="top"
-                    src={window.location.origin + "/brick.jpg"}
+                    src={window.location.origin + product.img}
                   />
                   <Card.Body>
                     <Card.Title>{product.name}</Card.Title>

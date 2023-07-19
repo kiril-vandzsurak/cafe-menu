@@ -46,7 +46,7 @@ const LuxCoctails = () => {
                 xl={4}
                 className="mb-4"
               >
-                <Card>
+                <Card className={styles.card}>
                   <Card.Img
                     variant="top"
                     src={window.location.origin + "/brick.jpg"}
@@ -71,6 +71,7 @@ const LuxCoctails = () => {
                               <Button
                                 variant="link"
                                 onClick={() => toggleIngredients(product.id)}
+                                className={styles.btnCard}
                               >
                                 Hide
                               </Button>
@@ -79,6 +80,7 @@ const LuxCoctails = () => {
                             <Button
                               variant="link"
                               onClick={() => toggleIngredients(product.id)}
+                              className={styles.btnCard}
                             >
                               Show More
                             </Button>

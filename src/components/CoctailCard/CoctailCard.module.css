@@ -16,18 +16,18 @@
 }
 
 .card {
-  background-color: rgb(23, 23, 23);
-  color: white;
+  background-color: rgb(23, 23, 23) !important;
+  color: white !important;
   font-family: "Dekko", cursive;
 }
 
 .btnCard {
-  text-decoration: none;
-  background-color: #dda568;
-  display: block;
-  color: black;
-  margin-top: 20px;
+  text-decoration: none !important;
+  background-color: #dda568 !important;
+  display: block !important;
+  color: black !important;
+  margin-top: 20px !important;
 }
 .btnCard:hover {
-  color: white;
+  color: white !important;
 }

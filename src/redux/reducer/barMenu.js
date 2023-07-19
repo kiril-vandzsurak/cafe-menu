@@ -5,6 +5,7 @@ const initialState = {
     {
       id: 2,
       name: "Касабланка",
+      img: "/casablanka.jpg",
       ingridients: [
         "De Kupyer Advoocat",
         "Горілка",
@@ -16,6 +17,7 @@ const initialState = {
     {
       id: 3,
       name: "Кава Адвокат",
+      img: "/coffeeAdvocat.jpg",
       ingridients: [
         "De Kupyer Advoocat",
         "De Kupyer Apricot Brandy",

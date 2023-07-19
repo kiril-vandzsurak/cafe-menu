@@ -35,7 +35,7 @@ const HotDrinks = () => {
                   xl={4}
                   className="mb-4"
                 >
-                  <Card>
+                  <Card className={styles.card}>
                     <Card.Img
                       variant="top"
                       src={window.location.origin + "/brick.jpg"}
@@ -64,7 +64,7 @@ const HotDrinks = () => {
                   xl={4}
                   className="mb-4"
                 >
-                  <Card>
+                  <Card className={styles.card}>
                     <Card.Img
                       variant="top"
                       src={window.location.origin + "/brick.jpg"}

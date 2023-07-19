@@ -13,3 +13,20 @@
   margin: 25px 0 25px 0;
   font-family: "Fugaz One", cursive;
 }
+
+.card {
+  background-color: rgb(23, 23, 23) !important;
+  color: white !important;
+  font-family: "Dekko", cursive;
+}
+
+.btnCard {
+  text-decoration: none !important;
+  background-color: #dda568 !important;
+  display: block !important;
+  color: black !important;
+  margin-top: 20px !important;
+}
+.btnCard:hover {
+  color: white !important;
+}
