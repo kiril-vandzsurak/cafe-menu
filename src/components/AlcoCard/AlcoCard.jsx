@@ -27,14 +27,16 @@ const AlcoCard = () => {
   return (
     <div>
       <div className={styles.naming}>
-        <div>
+        <div style={{ marginTop: "30px" }}>
           <div className={styles.underline}></div>
-          <div className={styles.textNaming}>Coctail Card</div>
+          <div className={styles.textNaming}>Алкогольні напої</div>
           <div className={styles.underline}></div>
         </div>
         <Container>
           <Row className="mt-5">
-            <div style={{ marginBottom: "30px" }}>vodka</div>
+            <div className={styles.underlineSub}></div>
+            <div className={styles.subName}>Горілка</div>
+            <div className={styles.underlineSubDown}></div>
             {Object.values(alcoVodka)
               .flat()
               .map((product) => (
@@ -61,6 +63,9 @@ const AlcoCard = () => {
               ))}
           </Row>
           <Row className="mt-5">
+            <div className={styles.underlineSub}></div>
+            <div className={styles.subName}>Коньяк</div>
+            <div className={styles.underlineSubDown}></div>
             {Object.values(alcoCogniac)
               .flat()
               .map((product) => (
@@ -87,6 +92,9 @@ const AlcoCard = () => {
               ))}
           </Row>
           <Row className="mt-5">
+            <div className={styles.underlineSub}></div>
+            <div className={styles.subName}>Бальзам та афродизіак</div>
+            <div className={styles.underlineSubDown}></div>
             {Object.values(alcoBalsam)
               .flat()
               .map((product) => (
@@ -113,6 +121,9 @@ const AlcoCard = () => {
               ))}
           </Row>
           <Row className="mt-5">
+            <div className={styles.underlineSub}></div>
+            <div className={styles.subName}>Текіла</div>
+            <div className={styles.underlineSubDown}></div>
             {Object.values(alcoTequila)
               .flat()
               .map((product) => (
@@ -139,6 +150,9 @@ const AlcoCard = () => {
               ))}
           </Row>
           <Row className="mt-5">
+            <div className={styles.underlineSub}></div>
+            <div className={styles.subName}>Віскі</div>
+            <div className={styles.underlineSubDown}></div>
             {Object.values(alcoWhiskey)
               .flat()
               .map((product) => (
@@ -165,6 +179,9 @@ const AlcoCard = () => {
               ))}
           </Row>
           <Row className="mt-5">
+            <div className={styles.underlineSub}></div>
+            <div className={styles.subName}>Джин</div>
+            <div className={styles.underlineSubDown}></div>
             {Object.values(alcoJin)
               .flat()
               .map((product) => (
@@ -191,6 +208,9 @@ const AlcoCard = () => {
               ))}
           </Row>
           <Row className="mt-5">
+            <div className={styles.underlineSub}></div>
+            <div className={styles.subName}>Ром</div>
+            <div className={styles.underlineSubDown}></div>
             {Object.values(alcoRum)
               .flat()
               .map((product) => (
@@ -217,6 +237,9 @@ const AlcoCard = () => {
               ))}
           </Row>
           <Row className="mt-5">
+            <div className={styles.underlineSub}></div>
+            <div className={styles.subName}>Вина</div>
+            <div className={styles.underlineSubDown}></div>
             {Object.values(alcoWine)
               .flat()
               .map((product) => (
@@ -243,6 +266,9 @@ const AlcoCard = () => {
               ))}
           </Row>
           <Row className="mt-5">
+            <div className={styles.underlineSub}></div>
+            <div className={styles.subName}>Шампанське</div>
+            <div className={styles.underlineSubDown}></div>
             {Object.values(alcoChampaign)
               .flat()
               .map((product) => (
@@ -269,6 +295,9 @@ const AlcoCard = () => {
               ))}
           </Row>
           <Row className="mt-5">
+            <div className={styles.underlineSub}></div>
+            <div className={styles.subName}>Лікери</div>
+            <div className={styles.underlineSubDown}></div>
             {Object.values(alcoLiquer)
               .flat()
               .map((product) => (
@@ -295,6 +324,9 @@ const AlcoCard = () => {
               ))}
           </Row>
           <Row className="mt-5">
+            <div className={styles.underlineSub}></div>
+            <div className={styles.subName}>Лікери De Kuyper</div>
+            <div className={styles.underlineSubDown}></div>
             {Object.values(alcoLiquerDeKupyer)
               .flat()
               .map((product) => (
@@ -321,6 +353,9 @@ const AlcoCard = () => {
               ))}
           </Row>
           <Row className="mt-5">
+            <div className={styles.underlineSub}></div>
+            <div className={styles.subName}>Бочкове пиво</div>
+            <div className={styles.underlineSubDown}></div>
             {Object.values(alcoDraftBeer)
               .flat()
               .map((product) => (
@@ -347,6 +382,9 @@ const AlcoCard = () => {
               ))}
           </Row>
           <Row className="mt-5">
+            <div className={styles.underlineSub}></div>
+            <div className={styles.subName}>Пляшкове пиво</div>
+            <div className={styles.underlineSubDown}></div>
             {Object.values(alcoBottleBeer)
               .flat()
               .map((product) => (
@@ -373,6 +411,9 @@ const AlcoCard = () => {
               ))}
           </Row>
           <Row className="mt-5">
+            <div className={styles.underlineSub}></div>
+            <div className={styles.subName}>До пива</div>
+            <div className={styles.underlineSubDown}></div>
             {Object.values(alcoForBeer)
               .flat()
               .map((product) => (
@@ -399,6 +440,9 @@ const AlcoCard = () => {
               ))}
           </Row>
           <Row className="mt-5">
+            <div className={styles.underlineSub}></div>
+            <div className={styles.subName}>Інші безалкогольні напої</div>
+            <div className={styles.underlineSubDown}></div>
             {Object.values(alcoOther)
               .flat()
               .map((product) => (

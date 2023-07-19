@@ -13,7 +13,8 @@ const CoffeeDrink = () => {
     <div>
       <div className={styles.naming}>
         <div>
-          <div className={styles.textNaming}>Coctail Card</div>
+          <div className={styles.underline}></div>
+          <div className={styles.textNaming}>Кава</div>
           <div className={styles.underline}></div>
         </div>
         <Container>
