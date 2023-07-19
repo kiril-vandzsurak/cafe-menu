@@ -16,7 +16,7 @@ const LemonadeDrinks = () => {
   return (
     <div>
       <div className={styles.naming}>
-        <div>
+        <div style={{ marginTop: "100px" }}>
           <div className={styles.underline}></div>
           <div className={styles.textNaming}>Лимонади та холодний чай</div>
           <div className={styles.underline}></div>

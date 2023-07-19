@@ -31,7 +31,7 @@ const CoctailCard = () => {
       <div className={styles.naming}>
         <div>
           <div className={styles.underline}></div>
-          <div className={styles.textNaming}>Coctail Card</div>
+          <div className={styles.textNaming}>Коктейлі</div>
           <div className={styles.underline}></div>
         </div>
         <Container>
@@ -46,7 +46,7 @@ const CoctailCard = () => {
                 xl={4}
                 className="mb-4"
               >
-                <Card>
+                <Card className={styles.card}>
                   <Card.Img
                     variant="top"
                     src={window.location.origin + "/brick.jpg"}
@@ -71,22 +71,24 @@ const CoctailCard = () => {
                               <Button
                                 variant="link"
                                 onClick={() => toggleIngredients(product.id)}
+                                className={styles.btnCard}
                               >
-                                Hide
+                                Приховати
                               </Button>
                             </>
                           ) : (
                             <Button
                               variant="link"
                               onClick={() => toggleIngredients(product.id)}
+                              className={styles.btnCard}
                             >
-                              Show More
+                              Всі інгридіенти
                             </Button>
                           )}
                         </>
                       )}
                     </Card.Text>
-                    <Card.Title>Price: {product.price} грн</Card.Title>
+                    <Card.Title>Ціна: {product.price} грн</Card.Title>
                   </Card.Body>
                 </Card>
               </Col>

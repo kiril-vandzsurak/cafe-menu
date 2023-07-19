@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Chonburi&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap");
 
 .headerPic {
   width: 100%;
@@ -50,4 +51,10 @@
   .fontH1 {
     font-size: 35px;
   }
+}
+
+.coctailText {
+  text-align: center;
+  color: white;
+  font-family: "Tilt Neon", cursive;
 }

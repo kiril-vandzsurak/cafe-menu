@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div style={{ backgroundColor: "darkgrey" }}>
+    <div style={{ backgroundColor: "#1c1c1c" }}>
       <BrowserRouter>
         <Routes>
           <Route element={<MainBody />} path="/" />

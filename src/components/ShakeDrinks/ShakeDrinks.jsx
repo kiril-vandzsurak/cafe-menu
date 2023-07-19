@@ -19,7 +19,7 @@ const ShakeDrinks = () => {
   return (
     <div>
       <div className={styles.naming}>
-        <div>
+        <div style={{ marginTop: "100px" }}>
           <div className={styles.underline}></div>
           <div className={styles.textNaming}>Фреска, Фрапе, Шейки</div>
           <div className={styles.underline}></div>

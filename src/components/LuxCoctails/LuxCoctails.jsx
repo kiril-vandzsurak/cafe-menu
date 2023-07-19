@@ -29,7 +29,7 @@ const LuxCoctails = () => {
   return (
     <div>
       <div className={styles.naming}>
-        <div>
+        <div style={{ marginTop: "100px" }}>
           <div className={styles.underline}></div>
           <div className={styles.textNaming}>Коктейлі від закладу</div>
           <div className={styles.underline}></div>

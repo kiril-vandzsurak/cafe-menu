@@ -13,7 +13,7 @@ const HotDrinks = () => {
   return (
     <div>
       <div className={styles.naming}>
-        <div>
+        <div style={{ marginTop: "100px" }}>
           <div className={styles.underline}></div>
           <div className={styles.textNaming}>Вина та Горги</div>
           <div className={styles.underline}></div>

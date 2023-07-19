@@ -13,9 +13,7 @@ const Header = () => {
               <h1 style={{ textAlign: "center" }} className={styles.fontH1}>
                 Salamandra
               </h1>
-              <h2 style={{ textAlign: "center", color: "white" }}>
-                Cocktail bar
-              </h2>
+              <h2 className={styles.coctailText}>Коктейль бар</h2>
             </Col>
           </Row>
         </Container>

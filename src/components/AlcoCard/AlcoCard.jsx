@@ -27,7 +27,7 @@ const AlcoCard = () => {
   return (
     <div>
       <div className={styles.naming}>
-        <div style={{ marginTop: "30px" }}>
+        <div style={{ marginTop: "100px" }}>
           <div className={styles.underline}></div>
           <div className={styles.textNaming}>Алкогольні напої</div>
           <div className={styles.underline}></div>
@@ -49,7 +49,7 @@ const AlcoCard = () => {
                   xl={4}
                   className="mb-5"
                 >
-                  <Card>
+                  <Card className={styles.card}>
                     <Card.Img
                       variant="top"
                       src={window.location.origin + "/brick.jpg"}
@@ -78,7 +78,7 @@ const AlcoCard = () => {
                   xl={4}
                   className="mb-4"
                 >
-                  <Card>
+                  <Card className={styles.card}>
                     <Card.Img
                       variant="top"
                       src={window.location.origin + "/brick.jpg"}
@@ -107,7 +107,7 @@ const AlcoCard = () => {
                   xl={4}
                   className="mb-4"
                 >
-                  <Card>
+                  <Card className={styles.card}>
                     <Card.Img
                       variant="top"
                       src={window.location.origin + "/brick.jpg"}
@@ -136,7 +136,7 @@ const AlcoCard = () => {
                   xl={4}
                   className="mb-4"
                 >
-                  <Card>
+                  <Card className={styles.card}>
                     <Card.Img
                       variant="top"
                       src={window.location.origin + "/brick.jpg"}
@@ -165,7 +165,7 @@ const AlcoCard = () => {
                   xl={4}
                   className="mb-4"
                 >
-                  <Card>
+                  <Card className={styles.card}>
                     <Card.Img
                       variant="top"
                       src={window.location.origin + "/brick.jpg"}
@@ -194,7 +194,7 @@ const AlcoCard = () => {
                   xl={4}
                   className="mb-4"
                 >
-                  <Card>
+                  <Card className={styles.card}>
                     <Card.Img
                       variant="top"
                       src={window.location.origin + "/brick.jpg"}
@@ -223,7 +223,7 @@ const AlcoCard = () => {
                   xl={4}
                   className="mb-4"
                 >
-                  <Card>
+                  <Card className={styles.card}>
                     <Card.Img
                       variant="top"
                       src={window.location.origin + "/brick.jpg"}
@@ -252,7 +252,7 @@ const AlcoCard = () => {
                   xl={4}
                   className="mb-4"
                 >
-                  <Card>
+                  <Card className={styles.card}>
                     <Card.Img
                       variant="top"
                       src={window.location.origin + "/brick.jpg"}
@@ -281,7 +281,7 @@ const AlcoCard = () => {
                   xl={4}
                   className="mb-4"
                 >
-                  <Card>
+                  <Card className={styles.card}>
                     <Card.Img
                       variant="top"
                       src={window.location.origin + "/brick.jpg"}
@@ -310,7 +310,7 @@ const AlcoCard = () => {
                   xl={4}
                   className="mb-4"
                 >
-                  <Card>
+                  <Card className={styles.card}>
                     <Card.Img
                       variant="top"
                       src={window.location.origin + "/brick.jpg"}
@@ -339,7 +339,7 @@ const AlcoCard = () => {
                   xl={4}
                   className="mb-4"
                 >
-                  <Card>
+                  <Card className={styles.card}>
                     <Card.Img
                       variant="top"
                       src={window.location.origin + "/brick.jpg"}
@@ -368,7 +368,7 @@ const AlcoCard = () => {
                   xl={4}
                   className="mb-4"
                 >
-                  <Card>
+                  <Card className={styles.card}>
                     <Card.Img
                       variant="top"
                       src={window.location.origin + "/brick.jpg"}
@@ -397,7 +397,7 @@ const AlcoCard = () => {
                   xl={4}
                   className="mb-4"
                 >
-                  <Card>
+                  <Card className={styles.card}>
                     <Card.Img
                       variant="top"
                       src={window.location.origin + "/brick.jpg"}
@@ -426,7 +426,7 @@ const AlcoCard = () => {
                   xl={4}
                   className="mb-4"
                 >
-                  <Card>
+                  <Card className={styles.card}>
                     <Card.Img
                       variant="top"
                       src={window.location.origin + "/brick.jpg"}
@@ -455,7 +455,7 @@ const AlcoCard = () => {
                   xl={4}
                   className="mb-4"
                 >
-                  <Card>
+                  <Card className={styles.card}>
                     <Card.Img
                       variant="top"
                       src={window.location.origin + "/brick.jpg"}
