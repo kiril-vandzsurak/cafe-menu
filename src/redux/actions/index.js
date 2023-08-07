@@ -9,3 +9,8 @@ export const changePrice = (id, newPrice) => {
     },
   };
 };
+
+export const addImg = (productId, newImg) => ({
+  type: "ADD_IMG",
+  payload: { productId, newImg },
+});
