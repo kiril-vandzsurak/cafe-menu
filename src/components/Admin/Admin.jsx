@@ -2,7 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useState } from "react";
-import { changePrice } from "../../redux/actions";
+import { changePrice, addImage } from "../../redux/actions";
 
 const Admin = () => {
   const menu = useSelector((state) => state.bar.coctailMenu);
@@ -16,8 +16,37 @@ const Admin = () => {
 
   const [showModal, setShowModal] = useState(false);
   const [selectedProductId, setSelectedProductId] = useState(null);
+  const [selectedProductImgUrl, setSelectedProductImgUrl] = useState("");
+  const [selectedProductImgFile, setSelectedProductImgFile] = useState(null);
   const [newPrice, setNewPrice] = useState("");
   const dispatch = useDispatch();
+
+  const handleOpenImgModal = (productId) => {
+    setSelectedProductId(productId);
+    const product = menu.find((item) => item.id === productId);
+    setSelectedProductImgUrl(product.img); // Set the selected product's image
+    setSelectedProductImgFile(null); // Clear the selected product's image file
+    setShowModal(true);
+  };
+
+  const handleImgFileChange = (e) => {
+    const file = e.target.files[0];
+    setSelectedProductImgFile(file);
+  };
+
+  const handleImgChange = (productId) => {
+    if (selectedProductImgFile) {
+      // Handle image file upload here (similar to your existing code)
+      const updatedImgUrl = `/images/${productId}-${selectedProductImgFile.name}`;
+      dispatch(addImage(productId, updatedImgUrl));
+
+      // Log the initial state of the product after image upload
+      const uploadedProduct = menu.find((item) => item.id === productId);
+      console.log("Initial state of uploaded product:", uploadedProduct);
+    }
+
+    handleCloseModal();
+  };
 
   const handleOpenModal = (productId) => {
     setSelectedProductId(productId);
@@ -119,6 +148,12 @@ const Admin = () => {
                   onClick={() => handleOpenModal(product.id)}
                 >
                   Змінити ціну
+                </Button>
+                <Button
+                  variant="info"
+                  onClick={() => handleOpenImgModal(product.id)}
+                >
+                  Change Image
                 </Button>
               </td>
             </tr>
@@ -341,23 +376,21 @@ const Admin = () => {
       </table>
 
       <Modal show={showModal} onHide={handleCloseModal}>
-        <Modal.Header closeButton>
-          <Modal.Title>Change Price</Modal.Title>
-        </Modal.Header>
+        {/* ... (modal title) */}
         <Modal.Body>
+          {/* ... (existing input for changing price) */}
+          <label htmlFor="imgInput">Select an image:</label>
           <input
-            type="number"
-            value={newPrice}
-            onChange={(e) => setNewPrice(e.target.value)}
-            placeholder="Enter new price"
+            type="file"
+            id="imgInput"
+            accept="image/*"
+            onChange={handleImgFileChange}
           />
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleCloseModal}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handlePriceChange}>
-            Save Changes
+          {/* ... (existing footer buttons for changing price) */}
+          <Button variant="primary" onClick={handleImgChange}>
+            Save Image Changes
           </Button>
         </Modal.Footer>
       </Modal>

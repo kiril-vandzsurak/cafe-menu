@@ -1,4 +1,4 @@
-import { CHANGE_PRICE } from "../actions";
+import { CHANGE_PRICE, ADD_IMAGE } from "../actions";
 
 const initialState = {
   coctailMenu: [
@@ -313,6 +313,21 @@ const barMenu = (state = initialState, action) => {
             ? { ...product, price: action.payload.newPrice }
             : product
         ),
+      };
+    case ADD_IMAGE:
+      console.log("ADD_IMAGE action dispatched with payload:", action.payload);
+
+      return {
+        ...state,
+        coctailMenu: state.coctailMenu.map((product) => {
+          if (product.id === action.payload.productId) {
+            return {
+              ...product,
+              img: `/${action.payload.imageFile.name}`, // Update image URL
+            };
+          }
+          return product;
+        }),
       };
     default:
       return state;

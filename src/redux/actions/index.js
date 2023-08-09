@@ -1,4 +1,5 @@
 export const CHANGE_PRICE = "CHANGE_PRICE";
+export const ADD_IMAGE = "ADD_IMAGE";
 
 export const changePrice = (id, newPrice) => {
   return {
@@ -10,7 +11,10 @@ export const changePrice = (id, newPrice) => {
   };
 };
 
-export const addImg = (productId, newImg) => ({
-  type: "ADD_IMG",
-  payload: { productId, newImg },
+export const addImage = (productId, imageFile) => ({
+  type: ADD_IMAGE,
+  payload: {
+    productId,
+    imageFile,
+  },
 });
