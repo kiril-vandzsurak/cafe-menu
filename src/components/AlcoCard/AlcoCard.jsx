@@ -27,9 +27,70 @@ const AlcoCard = () => {
   const alcoOther = useSelector((state) => state.alco.other);
 
   const [allCardsVisible, setAllCardsVisible] = useState(true);
+  const [vodkaVisible, setVodkaVisible] = useState(true);
+  const [cogniacVisible, setCogniacVisible] = useState(true);
+  const [balsamVisible, setBalsamVisible] = useState(true);
+  const [tequilaVisible, setTequilaVisible] = useState(true);
+  const [whiskeyVisible, setWhiskeyVisible] = useState(true);
+  const [jinVisible, setJinVisible] = useState(true);
+  const [rumVisible, setRumVisible] = useState(true);
+  const [wineVisible, setWineVisible] = useState(true);
+  const [champaignVisible, setChampaignVisible] = useState(true);
+  const [liquerVisible, setLiquerVisible] = useState(true);
+  const [liquerDeKupyerVisible, setLiquerDeKupyerVisible] = useState(true);
+  const [draftBeerVisible, setDraftBeerVisible] = useState(true);
+  const [bottleBeerVisible, setBottleBeerVisible] = useState(true);
+  const [alcoForBeerVisible, setAlcoForBeerVisible] = useState(true);
+  const [alcoOtherVisible, setAlcoOtherVisible] = useState(true);
 
   const toggleAllCards = () => {
     setAllCardsVisible(!allCardsVisible);
+  };
+
+  const toggleVodka = () => {
+    setVodkaVisible(!vodkaVisible);
+  };
+  const toggleCogniac = () => {
+    setCogniacVisible(!cogniacVisible);
+  };
+  const toggleBalsam = () => {
+    setBalsamVisible(!balsamVisible);
+  };
+  const toggleTequila = () => {
+    setTequilaVisible(!tequilaVisible);
+  };
+  const toggleWhiskey = () => {
+    setWhiskeyVisible(!whiskeyVisible);
+  };
+  const toggleJin = () => {
+    setJinVisible(!jinVisible);
+  };
+  const toggleRum = () => {
+    setRumVisible(!rumVisible);
+  };
+  const toggleWine = () => {
+    setWineVisible(!wineVisible);
+  };
+  const toggleChampaign = () => {
+    setChampaignVisible(!champaignVisible);
+  };
+  const toggleLiquer = () => {
+    setLiquerVisible(!liquerVisible);
+  };
+  const toggleLiquerDeKupyer = () => {
+    setLiquerDeKupyerVisible(!liquerDeKupyerVisible);
+  };
+  const toggleDraftBeer = () => {
+    setDraftBeerVisible(!draftBeerVisible);
+  };
+  const toggleBottleBeer = () => {
+    setBottleBeerVisible(!bottleBeerVisible);
+  };
+  const toggleAlcoForBeer = () => {
+    setAlcoForBeerVisible(!alcoForBeerVisible);
+  };
+  const toggleAlcoOther = () => {
+    setAlcoOtherVisible(!alcoOtherVisible);
   };
 
   return (
@@ -41,24 +102,22 @@ const AlcoCard = () => {
           <div className={styles.underline}></div>
         </div>
         <Container>
-          <Row
-            className={`mt-5 ${allCardsVisible ? "" : styles["hidden-cards"]}`}
-          >
+          <Row className={`mt-5 ${vodkaVisible ? "" : styles["hidden-cards"]}`}>
             <div className={styles.underlineSub}></div>
             <div className={styles.subName}>Горілка</div>
             <div className={styles.underlineSubDown}></div>
             <Button
               variant="link"
-              onClick={toggleAllCards}
+              onClick={toggleVodka}
               className={styles.toggleButton}
             >
-              {allCardsVisible ? "Приховати всі напої" : "Показати всі напої"}
+              {toggleVodka ? "Приховати всі напої" : "Показати всі напої"}
             </Button>
             {Object.values(alcoVodka)
               .flat()
               .map(
                 (product) =>
-                  allCardsVisible && (
+                  vodkaVisible && (
                     <Col
                       key={product.id}
                       xs={12}
@@ -83,23 +142,23 @@ const AlcoCard = () => {
               )}
           </Row>
           <Row
-            className={`mt-5 ${allCardsVisible ? "" : styles["hidden-cards"]}`}
+            className={`mt-5 ${cogniacVisible ? "" : styles["hidden-cards"]}`}
           >
             <div className={styles.underlineSub}></div>
             <div className={styles.subName}>Коньяк</div>
             <div className={styles.underlineSubDown}></div>
             <Button
               variant="link"
-              onClick={toggleAllCards}
+              onClick={toggleCogniac}
               className={styles.toggleButton}
             >
-              {allCardsVisible ? "Приховати всі напої" : "Показати всі напої"}
+              {cogniacVisible ? "Приховати всі напої" : "Показати всі напої"}
             </Button>
             {Object.values(alcoCogniac)
               .flat()
               .map(
                 (product) =>
-                  allCardsVisible && (
+                  cogniacVisible && (
                     <Col
                       key={product.id}
                       xs={12}
