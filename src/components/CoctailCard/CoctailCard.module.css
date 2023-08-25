@@ -31,3 +31,17 @@
 .btnCard:hover {
   color: white !important;
 }
+
+.hidden-cards {
+  display: none;
+}
+
+/* text-decoration: none;
+    background-color: black;
+    color: white;
+    margin-inline: auto;
+    display: block;
+    width: 95%;
+    height: 70px;
+    position: relative;
+    top: 45px; */

@@ -12,6 +12,12 @@ const CoctailCard = () => {
 
   const [expandedIngredients, setExpandedIngredients] = useState([]);
 
+  const [allCardsVisible, setAllCardsVisible] = useState(true);
+
+  const toggleAllCards = () => {
+    setAllCardsVisible(!allCardsVisible);
+  };
+
   const toggleIngredients = (productId) => {
     if (expandedIngredients.includes(productId)) {
       setExpandedIngredients(
@@ -35,64 +41,80 @@ const CoctailCard = () => {
           <div className={styles.underline}></div>
         </div>
         <Container>
-          <Row className="mt-5">
-            {menu.map((product) => (
-              <Col
-                key={product.id}
-                xs={12}
-                sm={6}
-                md={6}
-                lg={6}
-                xl={4}
-                className="mb-4"
-              >
-                <Card className={styles.card}>
-                  <Card.Img
-                    variant="top"
-                    src={window.location.origin + product.img}
-                  />
-                  <Card.Body>
-                    <Card.Title>{product.name}</Card.Title>
-                    <Card.Text>
-                      {product.ingridients
-                        .slice(0, 2)
-                        .map((ingredient, index) => (
-                          <div key={ingredient}>{ingredient}</div>
-                        ))}
-                      {product.ingridients.length > 2 && (
-                        <>
-                          {isExpanded(product.id) ? (
+          <Button
+            variant="link"
+            onClick={toggleAllCards}
+            className={styles.toggleButton}
+          >
+            {allCardsVisible
+              ? "Приховати всі коктейлі"
+              : "Показати всі коктейлі"}
+          </Button>
+          <Row
+            className={`mt-5 ${allCardsVisible ? "" : styles["hidden-cards"]}`}
+          >
+            {menu.map(
+              (product) =>
+                allCardsVisible && (
+                  <Col
+                    key={product.id}
+                    xs={12}
+                    sm={6}
+                    md={6}
+                    lg={6}
+                    xl={4}
+                    className={`mb-4`}
+                  >
+                    <Card className={styles.card}>
+                      <Card.Img
+                        variant="top"
+                        src={window.location.origin + product.img}
+                      />
+                      <Card.Body>
+                        <Card.Title>{product.name}</Card.Title>
+                        <Card.Text>
+                          {product.ingridients
+                            .slice(0, 2)
+                            .map((ingredient, index) => (
+                              <div key={ingredient}>{ingredient}</div>
+                            ))}
+                          {product.ingridients.length > 2 && (
                             <>
-                              {product.ingridients
-                                .slice(2)
-                                .map((ingredient, index) => (
-                                  <div key={index + 2}>{ingredient}</div>
-                                ))}
-                              <Button
-                                variant="link"
-                                onClick={() => toggleIngredients(product.id)}
-                                className={styles.btnCard}
-                              >
-                                Приховати
-                              </Button>
+                              {isExpanded(product.id) ? (
+                                <>
+                                  {product.ingridients
+                                    .slice(2)
+                                    .map((ingredient, index) => (
+                                      <div key={index + 2}>{ingredient}</div>
+                                    ))}
+                                  <Button
+                                    variant="link"
+                                    onClick={() =>
+                                      toggleIngredients(product.id)
+                                    }
+                                    className={styles.btnCard}
+                                  >
+                                    Приховати
+                                  </Button>
+                                </>
+                              ) : (
+                                <Button
+                                  variant="link"
+                                  onClick={() => toggleIngredients(product.id)}
+                                  className={styles.btnCard}
+                                >
+                                  Всі інгридіенти
+                                </Button>
+                              )}
                             </>
-                          ) : (
-                            <Button
-                              variant="link"
-                              onClick={() => toggleIngredients(product.id)}
-                              className={styles.btnCard}
-                            >
-                              Всі інгридіенти
-                            </Button>
                           )}
-                        </>
-                      )}
-                    </Card.Text>
-                    <Card.Title>Ціна: {product.price} грн</Card.Title>
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))}
+                        </Card.Text>
+                        <Card.Title>Ціна: {product.price} грн</Card.Title>
+                      </Card.Body>
+                    </Card>
+                  </Col>
+                )
+            )}
           </Row>
         </Container>
       </div>
