@@ -12,7 +12,7 @@ const CoctailCard = () => {
 
   const [expandedIngredients, setExpandedIngredients] = useState([]);
 
-  const [allCardsVisible, setAllCardsVisible] = useState(true);
+  const [allCardsVisible, setAllCardsVisible] = useState(false);
 
   const toggleAllCards = () => {
     setAllCardsVisible(!allCardsVisible);

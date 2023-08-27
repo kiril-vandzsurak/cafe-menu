@@ -39,3 +39,18 @@
   color: white !important;
   font-family: "Dekko", cursive;
 }
+
+.toggleButton {
+  text-decoration: none;
+  background-color: black !important;
+  color: white;
+  margin-inline: auto;
+  display: block;
+  width: 95%;
+  height: 70px;
+}
+
+.toggleButton:hover {
+  color: black !important;
+  background-color: white !important;
+}

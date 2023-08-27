@@ -26,26 +26,21 @@ const AlcoCard = () => {
   const alcoForBeer = useSelector((state) => state.alco.forBeer);
   const alcoOther = useSelector((state) => state.alco.other);
 
-  const [allCardsVisible, setAllCardsVisible] = useState(true);
-  const [vodkaVisible, setVodkaVisible] = useState(true);
-  const [cogniacVisible, setCogniacVisible] = useState(true);
-  const [balsamVisible, setBalsamVisible] = useState(true);
-  const [tequilaVisible, setTequilaVisible] = useState(true);
-  const [whiskeyVisible, setWhiskeyVisible] = useState(true);
-  const [jinVisible, setJinVisible] = useState(true);
-  const [rumVisible, setRumVisible] = useState(true);
-  const [wineVisible, setWineVisible] = useState(true);
-  const [champaignVisible, setChampaignVisible] = useState(true);
-  const [liquerVisible, setLiquerVisible] = useState(true);
-  const [liquerDeKupyerVisible, setLiquerDeKupyerVisible] = useState(true);
-  const [draftBeerVisible, setDraftBeerVisible] = useState(true);
-  const [bottleBeerVisible, setBottleBeerVisible] = useState(true);
-  const [alcoForBeerVisible, setAlcoForBeerVisible] = useState(true);
-  const [alcoOtherVisible, setAlcoOtherVisible] = useState(true);
-
-  const toggleAllCards = () => {
-    setAllCardsVisible(!allCardsVisible);
-  };
+  const [vodkaVisible, setVodkaVisible] = useState(false);
+  const [cogniacVisible, setCogniacVisible] = useState(false);
+  const [balsamVisible, setBalsamVisible] = useState(false);
+  const [tequilaVisible, setTequilaVisible] = useState(false);
+  const [whiskeyVisible, setWhiskeyVisible] = useState(false);
+  const [jinVisible, setJinVisible] = useState(false);
+  const [rumVisible, setRumVisible] = useState(false);
+  const [wineVisible, setWineVisible] = useState(false);
+  const [champaignVisible, setChampaignVisible] = useState(false);
+  const [liquerVisible, setLiquerVisible] = useState(false);
+  const [liquerDeKupyerVisible, setLiquerDeKupyerVisible] = useState(false);
+  const [draftBeerVisible, setDraftBeerVisible] = useState(false);
+  const [bottleBeerVisible, setBottleBeerVisible] = useState(false);
+  const [alcoForBeerVisible, setAlcoForBeerVisible] = useState(false);
+  const [alcoOtherVisible, setAlcoOtherVisible] = useState(false);
 
   const toggleVodka = () => {
     setVodkaVisible(!vodkaVisible);
@@ -183,23 +178,23 @@ const AlcoCard = () => {
               )}
           </Row>
           <Row
-            className={`mt-5 ${allCardsVisible ? "" : styles["hidden-cards"]}`}
+            className={`mt-5 ${balsamVisible ? "" : styles["hidden-cards"]}`}
           >
             <div className={styles.underlineSub}></div>
             <div className={styles.subName}>Бальзам та афродизіак</div>
             <div className={styles.underlineSubDown}></div>
             <Button
               variant="link"
-              onClick={toggleAllCards}
+              onClick={toggleBalsam}
               className={styles.toggleButton}
             >
-              {allCardsVisible ? "Приховати всі напої" : "Показати всі напої"}
+              {balsamVisible ? "Приховати всі напої" : "Показати всі напої"}
             </Button>
             {Object.values(alcoBalsam)
               .flat()
               .map(
                 (product) =>
-                  allCardsVisible && (
+                  balsamVisible && (
                     <Col
                       key={product.id}
                       xs={12}
@@ -224,23 +219,23 @@ const AlcoCard = () => {
               )}
           </Row>
           <Row
-            className={`mt-5 ${allCardsVisible ? "" : styles["hidden-cards"]}`}
+            className={`mt-5 ${tequilaVisible ? "" : styles["hidden-cards"]}`}
           >
             <div className={styles.underlineSub}></div>
             <div className={styles.subName}>Текіла</div>
             <div className={styles.underlineSubDown}></div>
             <Button
               variant="link"
-              onClick={toggleAllCards}
+              onClick={toggleTequila}
               className={styles.toggleButton}
             >
-              {allCardsVisible ? "Приховати всі напої" : "Показати всі напої"}
+              {tequilaVisible ? "Приховати всі напої" : "Показати всі напої"}
             </Button>
             {Object.values(alcoTequila)
               .flat()
               .map(
                 (product) =>
-                  allCardsVisible && (
+                  tequilaVisible && (
                     <Col
                       key={product.id}
                       xs={12}
@@ -265,23 +260,23 @@ const AlcoCard = () => {
               )}
           </Row>
           <Row
-            className={`mt-5 ${allCardsVisible ? "" : styles["hidden-cards"]}`}
+            className={`mt-5 ${whiskeyVisible ? "" : styles["hidden-cards"]}`}
           >
             <div className={styles.underlineSub}></div>
             <div className={styles.subName}>Віскі</div>
             <div className={styles.underlineSubDown}></div>
             <Button
               variant="link"
-              onClick={toggleAllCards}
+              onClick={toggleWhiskey}
               className={styles.toggleButton}
             >
-              {allCardsVisible ? "Приховати всі напої" : "Показати всі напої"}
+              {whiskeyVisible ? "Приховати всі напої" : "Показати всі напої"}
             </Button>
             {Object.values(alcoWhiskey)
               .flat()
               .map(
                 (product) =>
-                  allCardsVisible && (
+                  whiskeyVisible && (
                     <Col
                       key={product.id}
                       xs={12}
@@ -305,24 +300,22 @@ const AlcoCard = () => {
                   )
               )}
           </Row>
-          <Row
-            className={`mt-5 ${allCardsVisible ? "" : styles["hidden-cards"]}`}
-          >
+          <Row className={`mt-5 ${jinVisible ? "" : styles["hidden-cards"]}`}>
             <div className={styles.underlineSub}></div>
             <div className={styles.subName}>Джин</div>
             <div className={styles.underlineSubDown}></div>
             <Button
               variant="link"
-              onClick={toggleAllCards}
+              onClick={toggleJin}
               className={styles.toggleButton}
             >
-              {allCardsVisible ? "Приховати всі напої" : "Показати всі напої"}
+              {jinVisible ? "Приховати всі напої" : "Показати всі напої"}
             </Button>
             {Object.values(alcoJin)
               .flat()
               .map(
                 (product) =>
-                  allCardsVisible && (
+                  jinVisible && (
                     <Col
                       key={product.id}
                       xs={12}
@@ -346,24 +339,22 @@ const AlcoCard = () => {
                   )
               )}
           </Row>
-          <Row
-            className={`mt-5 ${allCardsVisible ? "" : styles["hidden-cards"]}`}
-          >
+          <Row className={`mt-5 ${rumVisible ? "" : styles["hidden-cards"]}`}>
             <div className={styles.underlineSub}></div>
             <div className={styles.subName}>Ром</div>
             <div className={styles.underlineSubDown}></div>
             <Button
               variant="link"
-              onClick={toggleAllCards}
+              onClick={toggleRum}
               className={styles.toggleButton}
             >
-              {allCardsVisible ? "Приховати всі напої" : "Показати всі напої"}
+              {rumVisible ? "Приховати всі напої" : "Показати всі напої"}
             </Button>
             {Object.values(alcoRum)
               .flat()
               .map(
                 (product) =>
-                  allCardsVisible && (
+                  rumVisible && (
                     <Col
                       key={product.id}
                       xs={12}
@@ -387,24 +378,22 @@ const AlcoCard = () => {
                   )
               )}
           </Row>
-          <Row
-            className={`mt-5 ${allCardsVisible ? "" : styles["hidden-cards"]}`}
-          >
+          <Row className={`mt-5 ${wineVisible ? "" : styles["hidden-cards"]}`}>
             <div className={styles.underlineSub}></div>
             <div className={styles.subName}>Вина</div>
             <div className={styles.underlineSubDown}></div>
             <Button
               variant="link"
-              onClick={toggleAllCards}
+              onClick={toggleWine}
               className={styles.toggleButton}
             >
-              {allCardsVisible ? "Приховати всі напої" : "Показати всі напої"}
+              {wineVisible ? "Приховати всі напої" : "Показати всі напої"}
             </Button>
             {Object.values(alcoWine)
               .flat()
               .map(
                 (product) =>
-                  allCardsVisible && (
+                  wineVisible && (
                     <Col
                       key={product.id}
                       xs={12}
@@ -429,23 +418,23 @@ const AlcoCard = () => {
               )}
           </Row>
           <Row
-            className={`mt-5 ${allCardsVisible ? "" : styles["hidden-cards"]}`}
+            className={`mt-5 ${champaignVisible ? "" : styles["hidden-cards"]}`}
           >
             <div className={styles.underlineSub}></div>
             <div className={styles.subName}>Шампанське</div>
             <div className={styles.underlineSubDown}></div>
             <Button
               variant="link"
-              onClick={toggleAllCards}
+              onClick={toggleChampaign}
               className={styles.toggleButton}
             >
-              {allCardsVisible ? "Приховати всі напої" : "Показати всі напої"}
+              {champaignVisible ? "Приховати всі напої" : "Показати всі напої"}
             </Button>
             {Object.values(alcoChampaign)
               .flat()
               .map(
                 (product) =>
-                  allCardsVisible && (
+                  champaignVisible && (
                     <Col
                       key={product.id}
                       xs={12}
@@ -470,23 +459,23 @@ const AlcoCard = () => {
               )}
           </Row>
           <Row
-            className={`mt-5 ${allCardsVisible ? "" : styles["hidden-cards"]}`}
+            className={`mt-5 ${liquerVisible ? "" : styles["hidden-cards"]}`}
           >
             <div className={styles.underlineSub}></div>
             <div className={styles.subName}>Лікери</div>
             <div className={styles.underlineSubDown}></div>
             <Button
               variant="link"
-              onClick={toggleAllCards}
+              onClick={toggleLiquer}
               className={styles.toggleButton}
             >
-              {allCardsVisible ? "Приховати всі напої" : "Показати всі напої"}
+              {liquerVisible ? "Приховати всі напої" : "Показати всі напої"}
             </Button>
             {Object.values(alcoLiquer)
               .flat()
               .map(
                 (product) =>
-                  allCardsVisible && (
+                  liquerVisible && (
                     <Col
                       key={product.id}
                       xs={12}
@@ -511,23 +500,27 @@ const AlcoCard = () => {
               )}
           </Row>
           <Row
-            className={`mt-5 ${allCardsVisible ? "" : styles["hidden-cards"]}`}
+            className={`mt-5 ${
+              liquerDeKupyerVisible ? "" : styles["hidden-cards"]
+            }`}
           >
             <div className={styles.underlineSub}></div>
             <div className={styles.subName}>Лікери De Kuyper</div>
             <div className={styles.underlineSubDown}></div>
             <Button
               variant="link"
-              onClick={toggleAllCards}
+              onClick={toggleLiquerDeKupyer}
               className={styles.toggleButton}
             >
-              {allCardsVisible ? "Приховати всі напої" : "Показати всі напої"}
+              {liquerDeKupyerVisible
+                ? "Приховати всі напої"
+                : "Показати всі напої"}
             </Button>
             {Object.values(alcoLiquerDeKupyer)
               .flat()
               .map(
                 (product) =>
-                  allCardsVisible && (
+                  liquerDeKupyerVisible && (
                     <Col
                       key={product.id}
                       xs={12}
@@ -552,23 +545,23 @@ const AlcoCard = () => {
               )}
           </Row>
           <Row
-            className={`mt-5 ${allCardsVisible ? "" : styles["hidden-cards"]}`}
+            className={`mt-5 ${draftBeerVisible ? "" : styles["hidden-cards"]}`}
           >
             <div className={styles.underlineSub}></div>
             <div className={styles.subName}>Бочкове пиво</div>
             <div className={styles.underlineSubDown}></div>
             <Button
               variant="link"
-              onClick={toggleAllCards}
+              onClick={toggleDraftBeer}
               className={styles.toggleButton}
             >
-              {allCardsVisible ? "Приховати всі напої" : "Показати всі напої"}
+              {draftBeerVisible ? "Приховати всі напої" : "Показати всі напої"}
             </Button>
             {Object.values(alcoDraftBeer)
               .flat()
               .map(
                 (product) =>
-                  allCardsVisible && (
+                  draftBeerVisible && (
                     <Col
                       key={product.id}
                       xs={12}
@@ -593,23 +586,25 @@ const AlcoCard = () => {
               )}
           </Row>
           <Row
-            className={`mt-5 ${allCardsVisible ? "" : styles["hidden-cards"]}`}
+            className={`mt-5 ${
+              bottleBeerVisible ? "" : styles["hidden-cards"]
+            }`}
           >
             <div className={styles.underlineSub}></div>
             <div className={styles.subName}>Пляшкове пиво</div>
             <div className={styles.underlineSubDown}></div>
             <Button
               variant="link"
-              onClick={toggleAllCards}
+              onClick={toggleBottleBeer}
               className={styles.toggleButton}
             >
-              {allCardsVisible ? "Приховати всі напої" : "Показати всі напої"}
+              {bottleBeerVisible ? "Приховати всі напої" : "Показати всі напої"}
             </Button>
             {Object.values(alcoBottleBeer)
               .flat()
               .map(
                 (product) =>
-                  allCardsVisible && (
+                  bottleBeerVisible && (
                     <Col
                       key={product.id}
                       xs={12}
@@ -634,23 +629,27 @@ const AlcoCard = () => {
               )}
           </Row>
           <Row
-            className={`mt-5 ${allCardsVisible ? "" : styles["hidden-cards"]}`}
+            className={`mt-5 ${
+              alcoForBeerVisible ? "" : styles["hidden-cards"]
+            }`}
           >
             <div className={styles.underlineSub}></div>
             <div className={styles.subName}>До пива</div>
             <div className={styles.underlineSubDown}></div>
             <Button
               variant="link"
-              onClick={toggleAllCards}
+              onClick={toggleAlcoForBeer}
               className={styles.toggleButton}
             >
-              {allCardsVisible ? "Приховати всі напої" : "Показати всі напої"}
+              {alcoForBeerVisible
+                ? "Приховати всі напої"
+                : "Показати всі напої"}
             </Button>
             {Object.values(alcoForBeer)
               .flat()
               .map(
                 (product) =>
-                  allCardsVisible && (
+                  alcoForBeerVisible && (
                     <Col
                       key={product.id}
                       xs={12}
@@ -675,23 +674,23 @@ const AlcoCard = () => {
               )}
           </Row>
           <Row
-            className={`mt-5 ${allCardsVisible ? "" : styles["hidden-cards"]}`}
+            className={`mt-5 ${alcoOtherVisible ? "" : styles["hidden-cards"]}`}
           >
             <div className={styles.underlineSub}></div>
             <div className={styles.subName}>Інші безалкогольні напої</div>
             <div className={styles.underlineSubDown}></div>
             <Button
               variant="link"
-              onClick={toggleAllCards}
+              onClick={toggleAlcoOther}
               className={styles.toggleButton}
             >
-              {allCardsVisible ? "Приховати всі напої" : "Показати всі напої"}
+              {alcoOtherVisible ? "Приховати всі напої" : "Показати всі напої"}
             </Button>
             {Object.values(alcoOther)
               .flat()
               .map(
                 (product) =>
-                  allCardsVisible && (
+                  alcoOtherVisible && (
                     <Col
                       key={product.id}
                       xs={12}
